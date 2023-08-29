@@ -29,10 +29,10 @@ const BackgroundImageContainer = styled("div")({
   justifyContent: "center",
   // alignItems: 'center',
   padding: 0,
-  position: "relative"
+  position: "relative",
 });
 
-const BackgroundPhoneImageContainer = styled("div")({
+const BackgroundPhoneImageContainer = styled("div")(({ theme }) =>({
   backgroundImage: 'url("/Phone.png")',
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -43,9 +43,12 @@ const BackgroundPhoneImageContainer = styled("div")({
   left: "50%",
   transform: "translate( -50%, 0% )",
   padding: 0,
-});
+  [theme.breakpoints.down('md')]: {
+    height: "22vh",
+  },
+}));
 
-const BackgroundStairsImageContainer = styled("div")({
+const BackgroundStairsImageContainer = styled("div")(({ theme }) =>({
   backgroundImage: 'url("/Stairs.png")',
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -56,7 +59,27 @@ const BackgroundStairsImageContainer = styled("div")({
   right: "-50%",
   transform: "translate( 0%, 0% )",
   padding: 0,
-});
+  [theme.breakpoints.down('sm')]: {
+    top: "-290%",
+    height: "22vh",
+  },
+}));
+const BackgroundcubeImageContainer = styled("div")(({ theme }) =>({
+  backgroundImage: 'url("/Cube.png")',
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  height: "7vmax",
+  aspectRatio: "1",
+  position: "absolute",
+  top: "-170%",
+  left: "-40%",
+  transform: "translate( 0%, 0% )",
+  padding: 0,
+  [theme.breakpoints.down('sm')]: {
+    top: "-290%",
+    left: "-20%",
+  },
+}));
 
 const BackgroundPillarImageContainer = styled("div")({
   backgroundImage: 'url("/Pillar.png")',
@@ -69,6 +92,23 @@ const BackgroundPillarImageContainer = styled("div")({
   right: "20%",
   padding: 0,
 });
+
+const BackgroundCubesImageContainer = styled("div")(({ theme }) =>({
+  backgroundImage: 'url("/Cubes.png")',
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  height: "25vmin",
+  aspectRatio: "1.1",
+  position: "absolute",
+  top: "250%",
+  left: "-40%",
+  transform: "translate( 0%, 0% )",
+  padding: 0,
+  [theme.breakpoints.down('sm')]: {
+    top: "290%",
+    left: "-20%",
+  },
+}));
 
 const page = () => {
   return (
@@ -85,21 +125,27 @@ const page = () => {
               transform: "translate(-50%, -50%)",
             }}
           >
-            <BackgroundStairsImageContainer/>
+            <BackgroundcubeImageContainer />
+            <BackgroundStairsImageContainer />
             <Typography
               align="center"
-              sx={{ fontWeight: 900, fontSize: 200, lineHeight: 0.5 }}
+              sx={{
+                fontWeight: 900,
+                fontSize: { xs: 100,sm: 150, md: 250, lg: 200 },
+                lineHeight: 0.5,
+              }}
               variant="h1"
               component={"h2"}
             >
               CASH
             </Typography>
             <BackgroundPhoneImageContainer />
+            <BackgroundCubesImageContainer />
             <Typography
               align="center"
               sx={{
                 fontWeight: 900,
-                fontSize: 200,
+                fontSize: { xs: 100,sm: 150,md: 250,  lg: 200 },
                 position: "absolute",
                 zIndex: 2,
                 top: "100%",
@@ -113,8 +159,7 @@ const page = () => {
             </Typography>
           </Box>
         </Container>
-        <BackgroundPillarImageContainer/>
-
+        <BackgroundPillarImageContainer />
       </BackgroundImageContainer>
     </ThemeProvider>
   );
