@@ -26,7 +26,7 @@ const pages = [
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const EyeImageContainer = styled("div")({
-  backgroundImage: 'url("/Eye.svg")',
+  backgroundImage: 'url("/eye.svg")',
   backgroundSize: "cover",
   backgroundPosition: "center",
   width: "max(80px, 2vw)",
