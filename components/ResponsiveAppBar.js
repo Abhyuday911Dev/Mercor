@@ -55,7 +55,7 @@ function ResponsiveAppBar() {
         sx={{ bgcolor: "transparent", backgroundImage: "transparent" }}
       >
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: {xs:1, lg:0}, display: { xs: "flex"} }}>
+          <Box sx={{ flexGrow: { xs: 1, lg: 0 }, display: { xs: "flex" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
