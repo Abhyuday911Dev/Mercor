@@ -120,9 +120,9 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Eye of the tiger">
+            <IconButton title="Eye">
               <EyeImageContainer />
-            </Tooltip>
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
